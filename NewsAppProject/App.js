@@ -14,19 +14,18 @@ import {
   View,
   Text,
   StatusBar,
-  Button,
 } from 'react-native';
 
 import {} from 'react-native';
 
 export const App = () => {
-  const myObj = {
-    url: 'www.google.com',
-    data: [1, 2, 3],
-    config: 'Empty',
-  };
-  const {config} = myObj;
-  console.log(config);
+  // const myObj = {
+  //   url: 'www.google.com',
+  //   data: [1, 2, 3],
+  //   config: 'Empty',
+  // };
+  // const {config} = myObj;
+  // console.log(config);
   const pressFunction = () => {
     alert('oldu');
     console.log('oldu oldu');

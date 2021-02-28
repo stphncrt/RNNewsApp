@@ -1,20 +1,20 @@
 import React from 'react';
 import {Text, View, Image, StyleSheet, Dimensions} from 'react-native';
+import {Input, Button} from './components';
 
 const Login = () => {
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: '#b2dfdb'}}>
       <Image source={require('./assets/react.png')} style={styles.logoStyle} />
-      <Text style={{fontSize: 40}}>Login</Text>
+      <Input holder="E posta adresinizi girin" />
+      <Input holder="Parolanızı Giriniz" />
     </View>
   );
 };
-
 export default Login;
 
 const styles = StyleSheet.create({
   logoStyle: {
-    backgroundColor: 'red',
     resizeMode: 'contain',
     tintColor: 'black',
     width: Dimensions.get('window').width,

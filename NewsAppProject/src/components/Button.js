@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Text} from 'react-native';
 
-export const Button = () => {
+const Button = () => {
   return (
     <View>
       <TouchableOpacity></TouchableOpacity>
