@@ -3,7 +3,7 @@ import {Text, View, Image, StyleSheet, Dimensions} from 'react-native';
 
 const Login = () => {
   return (
-    <View>
+    <View style={{flex: 1}}>
       <Image source={require('./assets/react.png')} style={styles.logoStyle} />
       <Text style={{fontSize: 40}}>Login</Text>
     </View>
