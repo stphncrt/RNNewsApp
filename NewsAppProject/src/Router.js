@@ -14,8 +14,8 @@ function Router() {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{gestureEnabled: true}}>
-        <Stack.Screen name="news" component={News} />
-        <Stack.Screen name="details" component={NewsDetail} />
+        <Stack.Screen name="Headlines" component={News} />
+        <Stack.Screen name="Details" component={NewsDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );

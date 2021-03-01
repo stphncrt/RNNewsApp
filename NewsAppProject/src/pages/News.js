@@ -157,7 +157,7 @@ const newsArray = [
 const News = (props) => {
   // const renderData = (data) => <Text style={{fontSize: 30}}>{data.item}</Text>;
   const change = () => {
-    props.navigation.navigate('details', {
+    props.navigation.navigate('Details', {
       dataArray: newsArray,
     });
   };
@@ -183,7 +183,12 @@ const News = (props) => {
     //   </FlatList>
     // </ScrollView>
     <View>
-      <FlatList data={newsArray} renderItem={renderData} />
+      <FlatList
+        data={newsArray}
+        renderItem={renderData}
+        keyExtractor={(item, index) => index.toString()}
+        numColumns={2}
+      />
     </View>
   );
 };

@@ -23,16 +23,17 @@ const NewsCard = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
+    width: Dimensions.get('window').width * 0.47,
+    margin: 5,
     borderRadius: 10,
     shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 4,
-    },
-    shadowOpacity: 0.1,
+    // shadowOffset: {
+    //   width: 0,
+    //   height: 2,
+    // },
+    shadowOpacity: 0.2,
     shadowRadius: 10,
-    elevation: 5,
+    elevation: 2,
   },
   text: {
     fontWeight: 'bold',
@@ -45,8 +46,9 @@ const styles = StyleSheet.create({
     // width: Dimensions.get('window').width,
     height: Dimensions.get('window').height * 0.35,
     marginVertical: 0,
-    marginHorizontal: 5,
+    // marginHorizontal: 5,
     borderRadius: 5,
+    // margin: 5,
   },
 });
 export {NewsCard};
