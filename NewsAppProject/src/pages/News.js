@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, ScrollView, FlatList} from 'react-native';
-import {NewsCard} from './components';
+import {NewsCard} from '../components/NewsCard';
 
 const myArray = Array.from(Array(15000).keys());
 const newsArray = [
@@ -46,16 +46,46 @@ const newsArray = [
       'A study has found that there could be a connection between Reddit posts and the performance of Tesla shares.\r\nEager to see how much online chatter about the electric automaker impacts its share price… [+1397 chars]',
   },
   {
-    author: null,
-    title: 'Bitcoin extends retreat from record high to hit lowest in 20 days',
+    author: 'Chuck Collins',
+    title:
+      'COVID-19 has made the super-rich richer. It’s time for a billionaire wealth tax',
     description:
-      "Bitcoin dropped 6.39% to $43,165.78 on Sunday, losing $2,944.20 from its previous close. Bitcoin, the world's biggest and best-known cryptocurrency, has fallen 26% from the year's high of$58,354.14 on Feb. 21 when it soared amid increasing confidence that it …",
+      'The US’s billionaires have amassed democracy-distorting concentrations of wealth and power as millions have been thrown into poverty',
     url:
-      'https://japantoday.com/category/business/update-1-bitcoin-extends-retreat-from-record-high-to-hit-lowest-in-20-days',
-    urlToImage: null,
-    publishedAt: '2021-02-28T21:38:03Z',
+      'https://www.opendemocracy.net/en/oureconomy/covid-19-has-made-the-super-rich-richer-its-time-for-a-billionaire-wealth-tax/',
+    urlToImage:
+      'https://cdn-prod.opendemocracy.net/media/images/PA-56892218.2e16d0ba.fill-1200x630.jpg',
+    publishedAt: '2021-03-01T09:45:27Z',
     content:
-      "Bitcoin dropped 6.39% to $43,165.78 on Sunday, losing $2,944.20 from its previous close.\r\nBitcoin, the world's biggest and best-known cryptocurrency, has fallen 26% from the year's high of$58,354.14 … [+478 chars]",
+      'What should good societies do when a wealthy few reap enormous financial windfalls during a global pandemic?\r\nWhile millions lost their lives, livelihoods, health and wealth, the worlds billionaires … [+1131 chars]',
+  },
+  {
+    author: 'Alison Tudor-Ackroyd alison.t-a@scmp.com',
+    title:
+      'China EV war: Top 5 electric vehicle fundraisers to watch out for in 2021',
+    description:
+      "China's fundraising boom for electric cars looks set to continue through the Year of the Ox as the capital-intensive industry ploughs billions of dollars...",
+    url:
+      'https://finance.yahoo.com/news/china-electric-vehicle-war-top-093000101.html',
+    urlToImage:
+      'https://s.yimg.com/uu/api/res/1.2/v2tdbbY6Wk.RcxLFYLgALA--~B/aD05NzI7dz05NzI7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/south_china_morning_post_us_228/c5f03b944d6916d252372be5935cad97',
+    publishedAt: '2021-03-01T09:30:00Z',
+    content:
+      "China's fundraising boom for electric cars looks set to continue through the Year of the Ox as the capital-intensive industry ploughs billions of dollars into new models, marketing and infrastructure… [+7397 chars]",
+  },
+  {
+    author: 'ReportLinker',
+    title:
+      'The global EV battery market is projected to grow at a CAGR of 25.3% from USD 27.3 billion in 2021 to USD 67.2 billion by 2025',
+    description:
+      'Factors such as improving battery technology, supporting government policies and regulations, and launch of new plug-in EV models will drive the EV battery...',
+    url:
+      'https://finance.yahoo.com/news/global-ev-battery-market-projected-095900576.html',
+    urlToImage:
+      'https://s.yimg.com/uu/api/res/1.2/IN3_pUboxxFTZlP4bjcjcQ--~B/aD00MDA7dz00MDA7YXBwaWQ9eXRhY2h5b24-/https://media.zenfs.com/en/globenewswire.com/4ce8962afb8a41766b626a7e61c8413f',
+    publishedAt: '2021-03-01T09:59:00Z',
+    content:
+      'Factors such as improving battery technology, supporting government policies and regulations, and launch of new plug-in EV models will drive the EV battery market. EV battery manufacturers have achie… [+7117 chars]',
   },
   {
     author: 'Reuters',
@@ -124,10 +154,16 @@ const newsArray = [
       "3D Rendered Abstract Background of one hundred dollar bill with stock market chart\r\ngetty\r\nIt was a rough week for stocks around the world. Even before the U.S. market opened on Friday, Hong Kong's H… [+6368 chars]",
   },
 ];
-const News = () => {
+const News = (props) => {
   // const renderData = (data) => <Text style={{fontSize: 30}}>{data.item}</Text>;
+  const change = () => {
+    props.navigation.navigate('details', {
+      dataArray: newsArray,
+    });
+  };
   const renderData = ({item}) => (
     <NewsCard
+      onPress={change}
       title={item.title}
       ImageUrl={item.urlToImage}
       desc={item.description}

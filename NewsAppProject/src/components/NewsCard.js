@@ -1,25 +1,42 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
 
 const NewsCard = (props) => {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>{props.title}</Text>
-      <Image source={{uri: props.ImageUrl}} style={styles.img} />
+    <TouchableOpacity onPress={props.onPress}>
+      <View style={styles.container}>
+        <Image source={{uri: props.ImageUrl}} style={styles.img} />
+        <Text style={styles.text}>{props.title}</Text>
 
-      <Text style={styles.desc}>{props.desc}</Text>
-    </View>
+        {/* <Text style={styles.desc}>{props.desc}</Text> */}
+      </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 1,
-    borderColor: '#514848',
+    margin: 10,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 4,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 5,
   },
   text: {
     fontWeight: 'bold',
-    margin: 5,
+    margin: 10,
   },
   desc: {
     margin: 5,
